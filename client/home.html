@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      button {
+        border-radius: 0;
+      }
+      
+      .dropdown:hover .dropdown-menu,
+      .dropdown:focus-within .dropdown-menu {
+        display: block;
+      }
+      
+      .focus-within\:outline-black:focus-within {
+        outline: 2px dotted #000;
+        outline-offset: 2px;
+      }
+    </style>
+
+    <title>OIG|Hotline</title>
+  </head>
+  <body>
+    <noscript>You need Javascript enabled for this application to work!</noscript>
+    <div id="root">
+      <div class="antialiased flex flex-col min-h-screen text-gray-900">
+        <header class="bg-blue-700 text-white">
+          <div class="border-b flex items-center justify-between px-4 py-1">
+            <h1 class="text-2xl font-semibold">
+              <a href="/home.html#">OIG<span class="text-yellow-500">Hotline</span></a>
+            </h1>
+            <nav class="hidden lg:block">
+              <ul class="flex items-center">
+                <li>
+                  <a href="/home.html#" class="inline-block w-full p-1 hover:bg-blue-800 rounded">My Worklist</a>
+                </li>
+                <li class="dropdown relative">
+                  <button type="button" class="inline-block w-full p-1 hover:bg-blue-800 rounded ml-1 focus:outline-none">Call Center</button>
+                  <div class="absolute text-gray-900 pt-2">
+                    <ul class="bg-gray-200 dropdown-menu hidden ml-1 p-1 rounded-sm w-40">
+                      <li>
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Dashboard</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">All Call Logs</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">New Call Log</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Manager Queue</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="dropdown relative">
+                  <button type="button" class="inline-block w-full p-1 hover:bg-blue-800 rounded ml-1 focus:outline-none">OI Operations</button>
+                  <div class="absolute text-gray-900 pt-2 right-0 -mr-1">
+                    <ul class="bg-gray-200 dropdown-menu hidden ml-1 p-1 rounded-sm w-40">
+                      <li>
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Dashboard</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">All Hotlines</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">New Hotline</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Awaiting Review</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Returned Hotlines</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Transfers</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li id="dropdown" class="relative">
+                  <button id="dropdownToggle" type="button" class="inline-block w-full p-1 hover:bg-blue-800 rounded ml-1 focus:outline-none">OI Operations</button>
+                  <div class="absolute text-gray-900 pt-2 right-0 -mr-1">
+                    <ul id="dropdownMenu" class="bg-gray-200 hidden ml-1 p-1 rounded-sm w-40">
+                      <li>
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Dashboard</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">All Hotlines</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">New Hotline</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Awaiting Review</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Returned Hotlines</a>
+                      </li>
+                      <li class="mt-1">
+                        <a href="/home.html#" class="inline-block w-full p-1 hover:bg-gray-500 rounded focus:bg-gray-500">Transfers</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <button id="toggleMenu" type="button" class="lg:hidden">
+              <span class="sr-only">Open Menu</span>
+              <svg viewBox="0 0 16 16" class="h-8 w-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+          </div>
+          <nav id="mobileNav" class="px-2 py-2 hidden lg:hidden">
+            <ul>
+              <li class="py-1">
+                <a href="/home.html#" class="inline-block w-full py-1 px-2 hover:bg-blue-800 rounded">My Worklist</a>
+              </li>
+              <li>
+                <span class="border-b border-t font-bold inline-block px-2 py-1 w-full">Call Center</span>
+                <ul>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">Dashboard</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">All Call Logs</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">New Call Log</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">Manager Queue</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="mt-1">
+                <span class="border-b border-t font-bold inline-block px-2 py-1 w-full">OI Operations</span>
+                <ul>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">Dashboard</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">All Hotlines</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">New Hotline</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">Awaiting Review</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">Returned Hotlines</a>
+                  </li>
+                  <li class="mt-1">
+                    <a href="/home.html#" class="inline-block w-full py-1 px-4 hover:bg-blue-800 rounded">Transfers</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <form>
+            <div class="max-w-xs mx-auto">
+              <label>Date received</label>
+              <div class="border focus-within:outline-black">
+                <input id="month" maxlength="2" class="text-center w-6 focus:bg-gray-200 focus:outline-none">
+                <span>/</span>
+                <input id="day" maxlength="2" class="text-center w-6 focus:bg-gray-200 focus:outline-none">
+                <span>/</span>
+                <input id="year" class="text-center w-10 focus:bg-gray-200 focus:outline-none">
+                <input id="hour" maxlength="2" class="text-center w-6 focus:bg-gray-200 focus:outline-none">
+                <span>:</span>
+                <input id="minute" maxlength="2" class="text-center w-6 focus:bg-gray-200 focus:outline-none">
+                <span>:</span>
+                <input id="second" maxlength="2" class="text-center w-6 focus:bg-gray-200 focus:outline-none">
+                <select id="ap" class="focus:outline-none">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+      const toggleMenu = document.getElementById('toggleMenu');
+      toggleMenu.addEventListener('click', (e) => {
+        const mobileNav = document.getElementById('mobileNav');
+        if (!mobileNav.classList.contains('hidden')) {
+          mobileNav.classList.add('hidden');
+        } else {
+          mobileNav.classList.remove('hidden');
+        }
+      });
+      
+      const dropdown = document.getElementById('dropdown');
+      const dropdownToggle = document.getElementById('dropdownToggle');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      
+      dropdownToggle.addEventListener('focus', (e) => {
+        if (dropdownMenu.classList.contains('hidden')) {
+          dropdownMenu.classList.remove('hidden');
+        }
+      });
+      
+      dropdownToggle.addEventListener('blur', (e) => {
+        if (!dropdownMenu.contains(document.activeElement)) {
+          dropdownMenu.classList.remove('hidden');
+        }
+      });
+      
+      const month = document.getElementById('month');
+      const day = document.getElementById('day');
+      const year = document.getElementById('year');
+      const hour = document.getElementById('hour');
+      const minute = document.getElementById('minute');
+      const second = document.getElementById('second');
+      const ap = document.getElementById('ap');
+      
+      const now = new Date();
+      month.value = now.getMonth() + 1;
+      day.value = now.getDate();
+      year.value = now.getYear() + 1900;
+      var currentHours = now.getHours();
+      hour.value = currentHours > 12 ? currentHours - 12 : currentHours;
+      minute.value = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+      second.value = now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds();
+      ap.value = currentHours > 12 ? 'PM' : 'AM';
+    </script>
+  </body>
+</html>
